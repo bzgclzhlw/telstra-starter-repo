@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/main/java/au/com/telstra/simcardactivator/service/ActuatorClient.java",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1771062751892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1771062751892,
+            "name": "Commit-0",
+            "content": "package au.com.telstra.simcardactivator.service;\r\n\r\nimport au.com.telstra.simcardactivator.dto.ActuatorRequest;\r\nimport au.com.telstra.simcardactivator.dto.ActuatorResponse;\r\nimport org.springframework.stereotype.Service;\r\nimport org.springframework.web.client.RestTemplate;\r\n\r\n@Service\r\npublic class ActuatorClient {\r\n\r\n    private final RestTemplate restTemplate = new RestTemplate();\r\n    private static final String ACTUATE_URL = \"http://localhost:8444/actuate\";\r\n\r\n    public ActuatorResponse actuate(String iccid) {\r\n        ActuatorRequest payload = new ActuatorRequest(iccid);\r\n        return restTemplate.postForObject(ACTUATE_URL, payload, ActuatorResponse.class);\r\n    }\r\n}\r\n\r\n"
+        }
+    ]
+}
