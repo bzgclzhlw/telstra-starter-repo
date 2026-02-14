@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# VSCode local history / tooling
+.history/
+.lh/
+
